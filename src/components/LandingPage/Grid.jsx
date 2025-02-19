@@ -1,3 +1,4 @@
+import { SERVICES_URL, VIDEO_URL } from "@/utils/Constant";
 import React, { useState, useRef } from "react";
 
 const ProjectCard = ({
@@ -27,7 +28,7 @@ const ProjectCard = ({
 
   return (
     <div
-      className={`relative overflow-hidden rounded-3xl bg-gray-100 h-full ${className} border border-gray-500 shadow-[0px_10px_20px_rgba(0,0,0,0.2)]`}
+      className={`relative overflow-hidden rounded-xl bg-gray-100 h-full ${className} border border-gray-500`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -67,24 +68,21 @@ const Grid = () => {
       title: "Design and Digital Advertising Agency",
       description: "Shopify apps that simplify your workflow",
       thumbnail: "/api/placeholder/800/600",
-      videoUrl:
-        "https://res.cloudinary.com/drapx7rdj/video/upload/v1739901917/AdminAucto_vv1lew.mp4",
+      videoUrl: VIDEO_URL?.NovaWatches,
     },
     {
       id: 2,
       title: "Effortless Style",
       description: "Web Apps: Keep track of the bigger picture",
-      thumbnail: "/api/placeholder/800/600",
-      videoUrl:
-        "https://res.cloudinary.com/drapx7rdj/video/upload/v1739902627/Krackpot_hbyz8p.mp4",
+      thumbnail: SERVICES_URL?.B2B,
+      videoUrl: VIDEO_URL?.JaiMulti,
     },
     {
       id: 3,
       title: "Sense Original",
       description: "Dashboards, CRMs and ERPs: Transform daily tasks",
-      thumbnail: "/api/placeholder/800/600",
-      videoUrl:
-        "https://res.cloudinary.com/drapx7rdj/video/upload/v1739901916/NovaWatches_z2nvsm.mp4",
+      thumbnail: SERVICES_URL?.Shopify,
+      videoUrl: VIDEO_URL?.Krackpot,
     },
     {
       id: 4,

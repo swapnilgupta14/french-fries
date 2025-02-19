@@ -69,7 +69,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="h-screen py-20 bg-white -mt-10 mb-10">
+    <section ref={sectionRef} className="py-20 bg-white -mt-10 mb-10">
       <div className="container mx-auto px-4 text-center">
         <h2
           ref={headingRef}

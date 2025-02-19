@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "alpinejs": "^3.14.8",
+    "framer-motion": "^12.4.4",
     "gsap": "^3.12.7",
     "lucide-react": "^0.475.0",
     "next": "15.1.7",

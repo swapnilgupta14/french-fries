@@ -24,7 +24,6 @@ const Contact = () => {
             together
           </h1>
 
-          {/* Moved Interest Buttons */}
           <div className="mb-12">
             <p className="text-blue-600 mb-4 font-medium">I'm interested in:</p>
             <div className="flex flex-wrap gap-3">

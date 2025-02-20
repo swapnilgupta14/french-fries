@@ -69,7 +69,6 @@ const ProjectCarousel = () => {
 
   return (
     <div className="h-screen w-full relative overflow-hidden">
-      {/* Header remains the same */}
       <div className="flex w-full justify-end items-center">
         <div className="w-[90%] pt-16 px-8 md:px-16">
           <div className="text-sm text-gray-600 mb-2">
@@ -82,13 +81,9 @@ const ProjectCarousel = () => {
         </div>
       </div>
 
-      {/* Carousel Container */}
       <div className="relative h-[70%] w-full">
-        {/* Left Content Section */}
         <div className="absolute top-0 left-0 px-20 w-[30%] h-full flex flex-col">
-          {/* Fixed Top Section */}
           <div className="pt-20">
-            {/* Project Number Badge */}
             <div className="flex items-center gap-4 mb-8">
               <p
                 className={`text-md font-semibold py-2 px-6 ${projects[currentIndex]?.bgColor} text-white rounded-full shadow-md transition-all duration-300 hover:shadow-lg`}
@@ -98,22 +93,18 @@ const ProjectCarousel = () => {
               <div className="h-[2px] flex-grow bg-gray-200"></div>
             </div>
 
-            {/* Project Title */}
             <h2 className="text-2xl font-medium text-black mb-4 transition-all duration-500 ease-in-out hover:translate-x-2">
               {projects[currentIndex]?.title}
             </h2>
           </div>
 
-          {/* Scrollable Middle Section */}
           <div className="flex-grow overflow-y-auto py-4 mb-4">
             <p className="text-black/80 text-lg leading-relaxed transition-opacity duration-500 ease-in-out">
               {projects[currentIndex]?.description}
             </p>
           </div>
 
-          {/* Fixed Bottom Section */}
           <div className="pb-8">
-            {/* Tags */}
             <div className="flex flex-wrap gap-3 mb-6">
               {projects[currentIndex]?.tags.map((tag, i) => (
                 <span
@@ -125,7 +116,6 @@ const ProjectCarousel = () => {
               ))}
             </div>
 
-            {/* Navigation Controls */}
             <div className="flex items-center gap-4">
               <button
                 onClick={prevSlide}
@@ -151,7 +141,6 @@ const ProjectCarousel = () => {
           </div>
         </div>
 
-        {/* Right side carousel remains the same */}
         <div
           className="absolute right-0 w-[70%] h-full p-10 overflow-clip"
           style={{
@@ -166,9 +155,6 @@ const ProjectCarousel = () => {
               style={{ transform: `translateX(${10 - currentIndex * 100}%)` }}
             >
               <div className="p-8 h-full">
-                {/* <div className="flex gap-4 mb-6">
-                  <span className="text-white/80">{project.year}</span>
-                </div> */}
                 <img
                   src={project.image}
                   alt={project.title}

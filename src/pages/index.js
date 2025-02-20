@@ -8,6 +8,7 @@ import Work from "@/components/LandingPage/Work";
 import PartnershipsSection from "@/components/LandingPage/PartnershipsSection";
 import Contact from "@/components/LandingPage/Contact";
 import Footer from "@/components/common/Footer";
+import ProjectCarousel from "@/components/LandingPage/ProjectCarousel";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <Projects />
         <Work/>
         <Grid />
+        <ProjectCarousel/>
         <PartnershipsSection/>
         <Contact/>
         <Footer/>

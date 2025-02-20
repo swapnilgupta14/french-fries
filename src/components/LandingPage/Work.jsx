@@ -86,7 +86,7 @@ const Work = () => {
   return (
     <div
       ref={sectionRef}
-      className="h-[80vh] items-center flex flex-col justify-center max-w-6xl mx-auto px-4 pt-16"
+      className="h-[80vh] items-center flex flex-col justify-center max-w-6xl mx-auto px-4 py-16"
     >
       <div className="text-center mb-8">
         <p className="text-sm text-gray-600 mb-2">7-10 Days Process</p>

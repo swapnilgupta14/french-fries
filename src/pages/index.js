@@ -17,8 +17,8 @@ export default function Home() {
         <Hero />
         <Services />
         <Projects />
-        <Grid />
         <Work/>
+        <Grid />
         <PartnershipsSection/>
         <Contact/>
         <Footer/>

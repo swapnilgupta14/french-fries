@@ -99,7 +99,7 @@ const ProjectCarousel = () => {
             </div>
 
             {/* Project Title */}
-            <h2 className="text-3xl font-bold text-black mb-4 transition-all duration-500 ease-in-out hover:translate-x-2">
+            <h2 className="text-2xl font-medium text-black mb-4 transition-all duration-500 ease-in-out hover:translate-x-2">
               {projects[currentIndex]?.title}
             </h2>
           </div>
@@ -129,15 +129,15 @@ const ProjectCarousel = () => {
             <div className="flex items-center gap-4">
               <button
                 onClick={prevSlide}
-                className="p-4 rounded-full bg-white shadow-lg hover:bg-gray-50 transition-all duration-300 hover:translate-x-[-4px] group"
+                className={`p-2 rounded-full text-white ${projects[currentIndex]?.bgColor} shadow-lg transition-all duration-300 hover:translate-x-[-4px] group`}
               >
-                <ChevronLeft className="w-6 h-6 group-hover:text-blue-600" />
+                <ChevronLeft className="w-6 h-6" />
               </button>
               <button
                 onClick={nextSlide}
-                className="p-4 rounded-full bg-white shadow-lg hover:bg-gray-50 transition-all duration-300 hover:translate-x-[4px] group"
+                className={`p-2 rounded-full text-white ${projects[currentIndex]?.bgColor} shadow-lg transition-all duration-300 hover:translate-x-[-4px] group`}
               >
-                <ChevronRight className="w-6 h-6 group-hover:text-blue-600" />
+                <ChevronRight className="w-6 h-6" />
               </button>
 
               <div className="ml-4 text-gray-500">

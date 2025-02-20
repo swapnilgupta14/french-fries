@@ -1,30 +1,14 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Handshake, ArrowRight, Plus } from "lucide-react";
+import { Handshake, Plus } from "lucide-react";
+import { LOGO_URL } from "@/utils/Constant";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const PartnershipsSection = () => {
   const containerRef = useRef(null);
   const cardsRef = useRef([]);
-
-  const LOGO_URL = {
-    JaiMulti:
-      "https://res.cloudinary.com/drapx7rdj/image/upload/v1739972067/Jmeco_ac5nhx.png",
-    KrackPot:
-      "https://res.cloudinary.com/drapx7rdj/image/upload/v1739972514/krack01_b4jeig.svg",
-    Entise:
-      "https://res.cloudinary.com/drapx7rdj/image/upload/v1739903173/84f2f3e9-f61f-4078-ade3-1985b1d43a7d.png",
-    TheGoodPlanet:
-      "https://res.cloudinary.com/drapx7rdj/image/upload/v1739903233/8b526398-1f4d-4475-b0b0-f8fa75ab6d81.png",
-    NovaWatches:
-      "https://res.cloudinary.com/drapx7rdj/image/upload/v1739983307/Logo_1_wbjb65.jpg",
-    Braces:
-      "https://res.cloudinary.com/drapx7rdj/image/upload/v1739983024/A482EDA4-882B-478A-A645-722AF4392412_blrbfm.jpg",
-    AuctoGames:
-      "https://res.cloudinary.com/drapx7rdj/image/upload/v1739903463/b5b479c1-b621-46f5-ba72-9db7bad0a199.png",
-  };
 
   const partnerships = Object.entries(LOGO_URL).map(([name, imageUrl]) => ({
     name,

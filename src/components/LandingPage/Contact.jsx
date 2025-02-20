@@ -16,7 +16,7 @@ const Contact = () => {
     <div className="flex flex-col md:flex-row justify-between max-w-7xl mx-auto px-4 py-16 gap-16">
       <div className="p-10 rounded-xl w-full flex items-start justify-center">
         <div className="flex-1">
-          <h1 className="text-5xl font-medium mb-8">
+          <h1 className="text-4xl font-semibold mb-8">
             Let's talk
             <br />
             about something <span className="text-blue-600">great</span>

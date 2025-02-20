@@ -44,7 +44,7 @@ const PartnershipsSection = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className="h-[80vh] flex flex-col items-start justify-start max-w-6xl mx-auto px-4 py-16">
+    <div ref={containerRef} className="h-full flex flex-col items-start justify-start max-w-6xl mx-auto px-4 py-16">
       <div className="mb-12">
         <p className="text-gray-600 text-sm mb-2">Global Alliances & Partnerships</p>
         <h2 className="text-4xl font-bold text-gray-900">

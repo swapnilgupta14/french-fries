@@ -1,4 +1,4 @@
-import { SERVICES_URL, VIDEO_URL } from "@/utils/Constant";
+import { SERVICES_URL, THUMBNAIL_URL, VIDEO_URL } from "@/utils/Constant";
 import React, { useState, useRef } from "react";
 
 const ProjectCard = ({
@@ -7,6 +7,7 @@ const ProjectCard = ({
   thumbnail,
   videoUrl,
   className,
+  playOnHoverOnly, // Flag for controlling autoplay behavior
 }) => {
   const [isHovering, setIsHovering] = useState(false);
   const videoRef = useRef(null);
@@ -32,31 +33,27 @@ const ProjectCard = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <img
-        src={thumbnail}
-        alt={title}
-        className={`w-full h-full object-cover transition-opacity duration-300 ${
-          isHovering ? "opacity-0" : "opacity-100"
-        }`}
-      />
+      {playOnHoverOnly && (
+        <img
+          src={thumbnail}
+          alt={title}
+          className={`w-full h-full object-cover transition-opacity duration-300 ${
+            isHovering ? "opacity-0" : "opacity-100"
+          }`}
+        />
+      )}
 
       <video
         ref={videoRef}
         className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${
-          isHovering ? "opacity-100" : "opacity-0"
+          playOnHoverOnly ? (isHovering ? "opacity-100" : "opacity-0") : "opacity-100"
         }`}
         src={videoUrl}
         muted
         playsInline
         loop
+        autoPlay={!playOnHoverOnly} // Only autoplay if not playOnHoverOnly
       />
-
-      {/* <div className="absolute bottom-0 w-full p-8 flex flex-col justify-between bg-gradient-to-b from-transparent to-black/30">
-        <div className="space-y-2">
-          <h3 className="text-2xl font-bold text-white">{title}</h3>
-          <p className="text-white/90 text-sm">{description}</p>
-        </div>
-      </div> */}
     </div>
   );
 };
@@ -67,30 +64,33 @@ const Grid = () => {
       id: 1,
       title: "Design and Digital Advertising Agency",
       description: "Shopify apps that simplify your workflow",
-      thumbnail: "/api/placeholder/800/600",
+      thumbnail: THUMBNAIL_URL?.NovaWatches,
       videoUrl: VIDEO_URL?.NovaWatches,
+      playOnHoverOnly: true, // Play only on hover
     },
     {
       id: 2,
       title: "Effortless Style",
       description: "Web Apps: Keep track of the bigger picture",
-      thumbnail: SERVICES_URL?.B2B,
+      thumbnail: THUMBNAIL_URL?.JaiMulti,
       videoUrl: VIDEO_URL?.JaiMulti,
+      playOnHoverOnly: false, // Play automatically
     },
     {
       id: 3,
       title: "Sense Original",
       description: "Dashboards, CRMs and ERPs: Transform daily tasks",
-      thumbnail: SERVICES_URL?.Shopify,
+      thumbnail: THUMBNAIL_URL?.Krackpot,
       videoUrl: VIDEO_URL?.Krackpot,
+      playOnHoverOnly: false, // Play automatically
     },
     {
       id: 4,
       title: "French Fry Features",
       description: "Combining artistry and functionality",
-      thumbnail: "/api/placeholder/800/600",
-      videoUrl:
-        "https://res.cloudinary.com/drapx7rdj/video/upload/v1739901912/UIUX_bnwpnv.mp4",
+      thumbnail: THUMBNAIL_URL?.FrenchFry,
+      videoUrl: VIDEO_URL?.FrenchFry,
+      playOnHoverOnly: true, // Play only on hover
     },
   ];
 

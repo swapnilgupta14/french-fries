@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { VIDEO_URL } from "@/utils/Constant";
 
 const Projects = () => {
   const sectionRef = useRef(null);
@@ -85,13 +86,19 @@ const Projects = () => {
           Our Projects are built through a very careful and precise process.
         </p>
 
-        <div ref={deviceRef} className="max-w-3xl mx-auto opacity-0">
-          <div className="relative rounded-[2rem] bg-gray-900 p-4 border-4 border-gray-500 shadow-[0px_40px_40px_rgba(0,0,0,0.5)]">
-            <div className="rounded-[1.5rem] overflow-hidden">
-              <img
-                src="https://placehold.co/600x400"
-                alt="Project Interface"
+        <div
+          ref={deviceRef}
+          className="mx-auto opacity-0 flex items-center justify-center"
+        >
+          <div className="relative max-w-5xl w-full rounded-[2rem] bg-black p-4 border-4 border-gray-500 shadow-[0px_40px_40px_rgba(0,0,0,0.5)]">
+            <div className="w-full rounded-[1.5rem] overflow-hidden aspect-video">
+              <video
                 className="w-full h-full object-cover"
+                src={VIDEO_URL?.NovaWatches}
+                muted
+                loop
+                autoPlay
+                playsInline
               />
             </div>
           </div>

@@ -21,7 +21,7 @@ const ProjectCarousel = () => {
         "Find your perfect tech companion here with our innovative solutions, is unique, which is why our customizable SaaS offerings cater to diverse industries and business needs",
       year: "2021",
       tags: ["Mobile App", "UI Design"],
-      bgColor: "bg-amber-400",
+      bgColor: "bg-blue-600",
 
       image: THUMBNAIL_URL?.JaiMulti,
     },
@@ -31,7 +31,7 @@ const ProjectCarousel = () => {
         "Another innovative project description here. is unique, which is why our customizable SaaS offerings cater to diverse industries and business needs",
       year: "2022",
       tags: ["Web App", "Design"],
-      bgColor: "bg-cyan-400",
+      bgColor: "bg-blue-600",
       image: THUMBNAIL_URL?.NovaWatches,
     },
     {
@@ -40,7 +40,7 @@ const ProjectCarousel = () => {
         "Codez transforms business landscapes with innovative SaaS solutions. We understand that every business is unique, which is why our customizable SaaS offerings cater to diverse industries and business needs.",
       year: "2020",
       tags: ["Website, UI/UX", "Photoshop, Illustrator"],
-      bgColor: "bg-emerald-500",
+      bgColor: "bg-blue-600",
 
       image: THUMBNAIL_URL?.KrackPot,
     },
@@ -50,7 +50,7 @@ const ProjectCarousel = () => {
         "Codez transforms business landscapes with innovative SaaS solutions. We understand that every business is unique, which is why our customizable SaaS offerings cater to diverse industries and business needs.",
       year: "2020",
       tags: ["Website, UI/UX", "Photoshop, Illustrator"],
-      bgColor: "bg-rose-600",
+      bgColor: "bg-blue-600",
       image: THUMBNAIL_URL?.JaiMulti,
     },
   ];

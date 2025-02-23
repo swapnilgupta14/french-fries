@@ -16,16 +16,15 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Email"
-                className="flex-grow px-4 py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="flex-grow px-4 py-1 border border-gray-300 rounded-3xl focus:outline-none focus:ring-2 focus:ring-gray-500"
               />
-              <button className="bg-blue-600 text-white px-6 py-1 rounded-md hover:bg-blue-700 transition-colors">
+              <button className="bg-black rounded-3xl text-white px-6 py-2-md hover:bg-gray-900 transition-colors">
                 Submit
               </button>
             </div>
           </div>
 
           <div className="flex justify-end gap-20 text-right">
-            {/* Navigation Links */}
             <div className="space-y-3 text-left">
               <Link
                 href="/"
@@ -62,12 +61,11 @@ const Footer = () => {
             <div className="space-y-3 text-left">
               <p className="text-gray-600">T: 7752865124</p>
               <p className="text-gray-600">info@frenchfryfeatures.com</p>
-              <button className="border border-gray-500 bg-gray-100 px-4 py-1 rounded-md hover:bg-gray-50 transition-colors">
+              <button className="border border-gray-500 bg-black text-white text-sm rounded-3xl px-4 py-1 hover:bg-gray-900 transition-colors">
                 Contact Us
               </button>
             </div>
 
-            {/* Social Links */}
             <div className="flex space-x-4">
               <Link href="#" className="text-gray-600 hover:text-gray-900">
                 <span className="sr-only">Instagram</span>
@@ -99,7 +97,7 @@ const Footer = () => {
       </div>
 
       <div className="max-w-[90%] mx-auto border-t border-gray-200 pt-3">
-        <div className="flex flex-col md:flex-row justify-between items-center">
+        <div className="flex flex-col md:flex-row justify-between items-center mb-4">
           <Link
             href="#"
             className="text-gray-500 hover:text-gray-700 mb-4 md:mb-0"
@@ -110,9 +108,7 @@ const Footer = () => {
             © 2025 FFF. All rights reserved.
           </div>
         </div>
-        <div className="text-4xl md:text-9xl mt-10 font-bold text-center bg-gradient-to-b from-gray-500 via-gray-300 to-gray-600 text-transparent bg-clip-text ">
-          French Fry Features
-        </div>
+       
       </div>
     </div>
   );

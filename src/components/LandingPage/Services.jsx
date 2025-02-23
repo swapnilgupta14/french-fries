@@ -1,57 +1,119 @@
-import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { useEffect, useRef, useState } from "react";
+import { Plus } from "lucide-react";
+import { SERVICES_URL } from "@/utils/Constant";
 
-gsap.registerPlugin(ScrollTrigger);
+const services = [
+  {
+    title: "Web Development",
+    shortDesc: "Creating powerful web applications with modern technologies",
+    longDesc:
+      "We specialize in building responsive, scalable web applications using the latest frameworks and best practices. Our team focuses on performance, accessibility, and user experience.",
+    image: SERVICES_URL?.WebApps,
+  },
+  {
+    title: "Mobile Development",
+    shortDesc: "Native and cross-platform mobile solutions",
+    longDesc:
+      "From iOS to Android, we deliver high-quality mobile applications that engage users and drive results. We use cutting-edge technologies to ensure optimal performance.",
+    image: SERVICES_URL?.B2B,
+  },
+  {
+    title: "UI/UX Design",
+    shortDesc: "Creating intuitive and beautiful user experiences",
+    longDesc:
+      "Our design team crafts user-centered interfaces that not only look stunning but also provide seamless interactions and exceptional user experiences.",
+    image: SERVICES_URL?.UIUX,
+  },
+  {
+    title: "Cloud Solutions",
+    shortDesc: "Scalable cloud infrastructure and services",
+    longDesc:
+      "We provide comprehensive cloud solutions that help businesses scale efficiently and securely. Our expertise spans across major cloud platforms.",
+    image: SERVICES_URL?.Shopify,
+  },
+];
+
 
 const ProductsSection = () => {
-  const sectionRef = useRef(null);
-  const cardsRef = useRef([]);
+  const [activeService, setActiveService] = useState(null);
+  const [hoveredService, setHoveredService] = useState(null);
+  const floatingImageRef = useRef(null);
 
   useEffect(() => {
-    const cards = cardsRef.current;
+    const handleMouseMove = (e) => {
+      if (hoveredService !== null && floatingImageRef.current) {
+        floatingImageRef.current.style.left = `${e.clientX}px`;
+        floatingImageRef.current.style.top = `${e.clientY}px`;
+      }
+    };
 
-    gsap.set(cards, { x: (index) => (index === 0 ? 0 : 1500)});
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, [hoveredService]);
 
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 0%",
-          end: "+=300%",
-          scrub: 1.2,
-          pin: true,
-          anticipatePin: 1,
-        },
-      })
-      .to(cards, {
-        x: 0,
-        opacity: 1,
-        stagger: { amount: 0.8, ease: "power2.out" },
-      });
-  }, []);
+  const toggleService = (index) => {
+    setActiveService(activeService === index ? null : index);
+  };
 
   return (
-    <div ref={sectionRef} className="flex h-screen w-full pt-10">
-      <div className="w-[40%] flex items-center justify-evenly p-8">
-        <div className="flex flex-col items-start gap-1">
-          <p>Products</p>
-          <h2 className="text-4xl font-bold text-gray-800">Our Services</h2>
-        </div>
-      </div>
+    <div className="h-screen w-full flex flex-col items-center justify-center p-8 relative">
+      <h1 className="text-3xl font-bold mb-12 relative z-10">Our Services</h1>
 
-      <div className="relative w-[60%] flex items-center justify-center overflow-hidden rounded-tl-3xl">
-        {Array.from({ length: 5 }).map((_, index) => (
+      <div className="max-w-2xl w-full space-y-4 relative z-10">
+        {services.map((service, index) => (
           <div
             key={index}
-            ref={(el) => (cardsRef.current[index] = el)}
-            className="absolute w-[85%] h-96 bg-blue-500 rounded-bl-3xl shadow-lg mx-20"
-            style={{
-              zIndex: 1 + index,
-            }}
-          />
+            className="relative"
+            onMouseEnter={() => setHoveredService(index)}
+            onMouseLeave={() => setHoveredService(null)}
+          >
+            <div className="bg-white/80 backdrop-blur-sm rounded-lg p-6 transition-all duration-300">
+              <div className="flex items-center justify-between">
+                <div className="flex-1">
+                  <h3 className="text-xl font-semibold">{service.title}</h3>
+                  <p className="text-gray-600 mt-1">{service.shortDesc}</p>
+                </div>
+                <button
+                  onMouseEnter={() => setHoveredService(null)}
+                  onClick={() => toggleService(index)}
+                  className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                >
+                  <Plus
+                    className={`transition-transform duration-300 ${
+                      activeService === index ? "rotate-45" : ""
+                    }`}
+                    size={24}
+                  />
+                </button>
+              </div>
+
+              <div
+                className={`overflow-hidden transition-all duration-300 ${
+                  activeService === index ? "max-h-40 mt-4" : "max-h-0"
+                }`}
+              >
+                <p className="text-gray-700">{service.longDesc}</p>
+              </div>
+            </div>
+          </div>
         ))}
       </div>
+
+      {hoveredService !== null && (
+        <div
+          ref={floatingImageRef}
+          className="fixed -top-50 -left-50 pointer-events-none z-50 transition-opacity duration-400 opacity-100"
+          style={{
+            transform: "translate(-50%, -50%)",
+          }}
+        >
+          <img
+            src={services[hoveredService].image}
+            alt={services[hoveredService].title}
+            className="w-[350px] h-[250px] object-cover rounded-lg shadow-lg"
+          />
+        </div>
+      )}
     </div>
   );
 };

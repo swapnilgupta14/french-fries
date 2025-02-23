@@ -51,17 +51,17 @@ const PartnershipsSection = () => {
         </h2>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 self-center">
         {partnerships.map((partner, index) => (
           <div
             key={partner.name}
             ref={(el) => (cardsRef.current[index] = el)}
-            className="flex items-center justify-center bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105"
+            className="flex items-center justify-center bg-white rounded-lg p-5 shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105"
           >
             <img
               src={partner.imageUrl}
               alt={`${partner.name} logo`}
-              className="w-full h-24 object-contain"
+              className="w-full h-16 object-contain"
             />
           </div>
         ))}

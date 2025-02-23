@@ -14,7 +14,7 @@ export const THUMBNAIL_URL = {
 }
 
 export const SERVICES_URL = {
-    'WebApps': "https://res.cloudinary.com/drapx7rdj/video/upload/v1739901912/UIUX_bnwpnv.mp4",  //Aucto
+    'WebApps': "https://res.cloudinary.com/drapx7rdj/image/upload/v1739985481/8f1f486f-5ec0-4287-a669-81a3138037ab.png",  //Aucto
     'B2B' : "https://res.cloudinary.com/drapx7rdj/image/upload/v1739902909/1f880b23-0218-45e4-ab77-13d7aac0442a.png", // JaiMulti
     'UIUX': "https://res.cloudinary.com/drapx7rdj/image/upload/v1739985135/iPhone_16_Pro_j23dyy.png", //KaiNaath
     'Shopify' : "https://res.cloudinary.com/drapx7rdj/image/upload/v1739903057/81c28c0e-9e88-43a2-a357-b7fd92f394d8.png",  //Entise
